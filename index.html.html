@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>techshop.rs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Odabir jezika -->
+    <div class="language-selector">
+        <a href="?lang=sr" class="lang-btn">SR</a>
+        <a href="?lang=en" class="lang-btn">EN</a>
+    </div>
+
+    <header>
+        <h1 id="store-title">Dobrodošli u moju prodavnicu</h1>
+        <p id="store-description">Proizvodi sa popustom!</p>
+    </header>
+
+    <!-- Proizvod 1 - Bežične slušalice -->
+    <div class="product">
+        <img src="slike/bežične slušalice.jpg" alt="Wireless Headphones">
+        <h2 id="product-name">Wireless Headphones</h2>
+        <p class="old-price" id="old-price">Stara cena: <span>1000 RSD</span></p>
+        <p class="new-price" id="new-price">Cena sa popustom: <span>750 RSD</span></p>
+        <p class="discount" id="discount">Popust: 25%</p>
+
+        <!-- Forma za narudžbinu -->
+        <form action="mailto:ognjencurcic50@gmail.com" method="post" enctype="text/plain">
+            <label for="ime" id="label-ime">Ime i prezime:</label><br>
+            <input type="text" name="Ime" required><br>
+
+            <label for="email" id="label-email">Email:</label><br>
+            <input type="email" name="Email" required><br>
+
+            <label for="adresa" id="label-adresa">Adresa za dostavu:</label><br>
+            <input type="text" name="Adresa" required><br>
+
+            <label for="telefon" id="label-telefon">Telefon (opciono):</label><br>
+            <input type="text" name="Telefon"><br>
+
+            <input type="hidden" name="Proizvod" value="Bežične slušalice - 1500 RSD">
+            <input type="submit" value="Poruči" class="buy-button" id="buy-button">
+        </form>
+    </div>
+
+    <footer>
+        <p id="footer-text">&copy; 2025 Moja prodavnica. Svi prava zadržana.</p>
+    </footer>
+
+    <script>
+        // Ovaj JavaScript kod menja jezik na osnovu parametra u URL-u
+        const urlParams = new URLSearchParams(window.location.search);
+        const lang = urlParams.get('lang') || 'sr';  // Podrazumevani jezik je srpski
+
+        const translations = {
+            sr: {
+                storeTitle: "Dobrodošli u moju prodavnicu",
+                storeDescription: "Proizvodi sa popustom!",
+                productName: "Bežične slušalice",
+                oldPrice: "Stara cena: 1000 RSD",
+                newPrice: "Cena sa popustom: 750 RSD",
+                discount: "Popust: 25%",
+                labelIme: "Ime i prezime:",
+                labelEmail: "Email:",
+                labelAdresa: "Adresa za dostavu:",
+                labelTelefon: "Telefon (opciono):",
+                buyButton: "Poruči",
+                footerText: "&copy; 2025 Moja prodavnica. Svi prava zadržana."
+            },
+            en: {
+                storeTitle: "Welcome to my store",
+                storeDescription: "Discounted products!",
+                productName: "Wireless Headphones",
+                oldPrice: "Old price: 1000 RSD",
+                newPrice: "Discounted price: 750 RSD",
+                discount: "Discount: 25%",
+                labelIme: "Full name:",
+                labelEmail: "Email:",
+                labelAdresa: "Shipping address:",
+                labelTelefon: "Phone (optional):",
+                buyButton: "Order",
+                footerText: "&copy; 2025 My store. All rights reserved."
+            }
+        };
+
+        function changeLanguage() {
+            document.getElementById('store-title').innerHTML = translations[lang].storeTitle;
+            document.getElementById('store-description').innerHTML = translations[lang].storeDescription;
+            document.getElementById('product-name').innerHTML = translations[lang].productName;
+            document.getElementById('old-price').innerHTML = translations[lang].oldPrice;
+            document.getElementById('new-price').innerHTML = translations[lang].newPrice;
+            document.getElementById('discount').innerHTML = translations[lang].discount;
+            document.getElementById('label-ime').innerHTML = translations[lang].labelIme;
+            document.getElementById('label-email').innerHTML = translations[lang].labelEmail;
+            document.getElementById('label-adresa').innerHTML = translations[lang].labelAdresa;
+            document.getElementById('label-telefon').innerHTML = translations[lang].labelTelefon;
+            document.getElementById('buy-button').value = translations[lang].buyButton;
+            document.getElementById('footer-text').innerHTML = translations[lang].footerText;
+        }
+
+        changeLanguage();
+    </script>
+</body>
+</html>
+<div class="product-gallery">
+    <h2>Naša Ponuda</h2>
+    
+    <div class="product">
+        <img src="slike/bežične_slušalice.jpg" alt="Bežične slušalice">
+        <h3>Bežične slušalice</h3>
+        <p class="price">1000 RSD</p>
+        <a href="product1.html" class="view-more">Pogledaj više</a>
+    </div>
+    
+    <!-- Dodaj još proizvoda po želji -->
+</div>
+<footer>
+    <footer>
+        <footer>
+            <h3>Kontakt</h3>
+            <p>Email: 
+              <a href="mailto:ognjencurcic50@gmail.com">ognjencurcic50@gmail.com</a> |
+              <a href="mailto:dusanprlincevic6@gmail.com">dusanprlincevic6@gmail.com</a>
+            </p>
+            <p>Instagram profili:</p>
+            <ul>
+              <li><a href="https://www.instagram.com/ogitechshop" target="_blank">@ogitechshop</a></li>
+              <li><a href="https://www.instagram.com/dusantechstore" target="_blank">@dusantechstore</a></li>
+            </ul>
+          </footer>
+          <!-- Srpski jezik -->
+<div id="product-serbian">
+    <h2>Bežične slušalice</h2>
+    <p><del>2.999 RSD</del> <strong>2.499 RSD</strong></p>
+    <button>Kupite sada</button>
+  </div>
+  
+  <!-- Engleski jezik -->
+  <div id="product-english" style=";">
+    <h2>Wireless Headphones</h2>
+    <p><del>2.999 RSD</del> <strong>2.499 RSD</strong></p>
+    <button>Buy Now</button>
+  </div>
+<!-- Engleski jezik -->
+<div id="offer-english" style="display: none;">
+    <h2>Our Offer</h2>
+    <p>Product 1: Wireless Headphones</p>
+    <button>Buy Now</button>
+  </div>
+    
